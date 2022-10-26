@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+}
+
+.app {
+    display: grid;
+    place-content: center;
+    padding-top: 2em;
+}
+
+.checked_item {
+    text-decoration: line-through;
+    opacity: 0.5;
+}

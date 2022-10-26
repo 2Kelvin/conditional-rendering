@@ -1,10 +1,20 @@
 function Item(_ref) {
-    var isPacked = _ref.isPacked,
+    var _ref$isPacked = _ref.isPacked,
+        isPacked = _ref$isPacked === undefined ? false : _ref$isPacked,
         name = _ref.name;
 
+    if (isPacked) {
+        return React.createElement(
+            "li",
+            { className: "checked_item" },
+            " ",
+            name,
+            " \u2714 "
+        );
+    }
     return React.createElement(
         "li",
-        { className: "item" },
+        { className: "li_item" },
         name
     );
 }
@@ -12,7 +22,7 @@ function Item(_ref) {
 function PackingList() {
     return React.createElement(
         "section",
-        null,
+        { className: "packing_list" },
         React.createElement(
             "h1",
             null,

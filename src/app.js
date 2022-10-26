@@ -1,14 +1,13 @@
-function Item({ isPacked, name }) {
-    return (
-        <li className="item">
-            {name}
-        </li>
-    );
+function Item({ isPacked = false, name }) {
+    if (isPacked) {
+        return <li className="checked_item"> {name} ✔ </li>;
+    }
+    return <li className="li_item">{name}</li>;
 }
 
 function PackingList() {
     return (
-        <section>
+        <section className="packing_list">
             <h1>Sally Ride's Packing List</h1>
             <ul>
                 <Item
