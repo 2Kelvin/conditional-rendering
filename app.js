@@ -4,13 +4,8 @@ function Item(_ref) {
         name = _ref.name;
 
     if (isPacked) {
-        return React.createElement(
-            "li",
-            { className: "checked_item" },
-            " ",
-            name,
-            " \u2714 "
-        );
+        return null;
+        // return <li className="checked_item"> {name} ✔ </li>;
     }
     return React.createElement(
         "li",

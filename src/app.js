@@ -1,6 +1,7 @@
 function Item({ isPacked = false, name }) {
     if (isPacked) {
-        return <li className="checked_item"> {name} ✔ </li>;
+        return null;
+        // return <li className="checked_item"> {name} ✔ </li>;
     }
     return <li className="li_item">{name}</li>;
 }
