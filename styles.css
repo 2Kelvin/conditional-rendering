@@ -1,11 +1,13 @@
 body {
     margin: 0;
+    background-color: #efefef;
 }
 
 .app {
     display: grid;
     place-content: center;
     padding-top: 2em;
+    background-color: #efefef;
 }
 
 .checked_item {

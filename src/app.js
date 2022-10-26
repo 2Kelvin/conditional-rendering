@@ -1,9 +1,17 @@
+function PackedItem({ isPacked, name }) {
+    return <li className="checked_item"> {name} ✔ </li>;
+}
+
+function UnpackedItem({ isPacked, name }) {
+    return <li className="li_item">{name}</li>;
+}
+
 function Item({ isPacked = false, name }) {
     if (isPacked) {
-        return null;
-        // return <li className="checked_item"> {name} ✔ </li>;
+        return <PackedItem isPacked={isPacked} name={name}
+        />;
     }
-    return <li className="li_item">{name}</li>;
+    return <UnpackedItem isPacked={isPacked} name={name} />;
 }
 
 function PackingList() {

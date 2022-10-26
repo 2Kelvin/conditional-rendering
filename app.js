@@ -1,17 +1,37 @@
-function Item(_ref) {
-    var _ref$isPacked = _ref.isPacked,
-        isPacked = _ref$isPacked === undefined ? false : _ref$isPacked,
+function PackedItem(_ref) {
+    var isPacked = _ref.isPacked,
         name = _ref.name;
 
-    if (isPacked) {
-        return null;
-        // return <li className="checked_item"> {name} ✔ </li>;
-    }
+    return React.createElement(
+        "li",
+        { className: "checked_item" },
+        " ",
+        name,
+        " \u2714 "
+    );
+}
+
+function UnpackedItem(_ref2) {
+    var isPacked = _ref2.isPacked,
+        name = _ref2.name;
+
     return React.createElement(
         "li",
         { className: "li_item" },
         name
     );
+}
+
+function Item(_ref3) {
+    var _ref3$isPacked = _ref3.isPacked,
+        isPacked = _ref3$isPacked === undefined ? false : _ref3$isPacked,
+        name = _ref3.name;
+
+    if (isPacked) {
+        return React.createElement(PackedItem, { isPacked: isPacked, name: name
+        });
+    }
+    return React.createElement(UnpackedItem, { isPacked: isPacked, name: name });
 }
 
 function PackingList() {
