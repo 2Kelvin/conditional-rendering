@@ -1,6 +1,5 @@
 function PackedItem(_ref) {
-    var isPacked = _ref.isPacked,
-        name = _ref.name;
+    var name = _ref.name;
 
     return React.createElement(
         "li",
@@ -12,8 +11,7 @@ function PackedItem(_ref) {
 }
 
 function UnpackedItem(_ref2) {
-    var isPacked = _ref2.isPacked,
-        name = _ref2.name;
+    var name = _ref2.name;
 
     return React.createElement(
         "li",
@@ -28,10 +26,9 @@ function Item(_ref3) {
         name = _ref3.name;
 
     if (isPacked) {
-        return React.createElement(PackedItem, { isPacked: isPacked, name: name
-        });
+        return React.createElement(PackedItem, { name: name });
     }
-    return React.createElement(UnpackedItem, { isPacked: isPacked, name: name });
+    return React.createElement(UnpackedItem, { name: name });
 }
 
 function PackingList() {
