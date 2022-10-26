@@ -1,32 +1,31 @@
-// function PackedItem({ name }) {
-//     return <li className="checked_item"> {name} ✔ </li>;
-// }
+function PackedItem(_ref) {
+    var name = _ref.name;
 
-// function UnpackedItem({ name }) {
-//     return <li className="li_item">{name}</li>;
-// }
+    return React.createElement(
+        "li",
+        { className: "checked_item" },
+        " ",
+        name,
+        " \u2714 "
+    );
+}
 
-// return isPacked ? (<PackedItem name={name} />) : (<UnpackedItem name={name} />);
+function UnpackedItem(_ref2) {
+    var name = _ref2.name;
 
-function Item(_ref) {
-    var _ref$isPacked = _ref.isPacked,
-        isPacked = _ref$isPacked === undefined ? false : _ref$isPacked,
-        name = _ref.name;
-
-    var item_content = name;
-
-    if (isPacked) {
-        item_content = React.createElement(
-            "del",
-            { className: "checked_item" },
-            name + ' ✔'
-        );
-    }
     return React.createElement(
         "li",
         { className: "li_item" },
-        item_content
+        name
     );
+}
+
+function Item(_ref3) {
+    var _ref3$isPacked = _ref3.isPacked,
+        isPacked = _ref3$isPacked === undefined ? false : _ref3$isPacked,
+        name = _ref3.name;
+
+    return isPacked ? React.createElement(PackedItem, { name: name }) : React.createElement(UnpackedItem, { name: name });
 }
 
 function PackingList() {
@@ -55,11 +54,7 @@ function PackingList() {
             }),
             React.createElement(Item, {
                 isPacked: false,
-                name: "Asus Laptop"
-            }),
-            React.createElement(Item, {
-                isPacked: false,
-                name: "Apply Wikipedia Internship"
+                name: "Laptop"
             })
         )
     );

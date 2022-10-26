@@ -1,28 +1,13 @@
-// function PackedItem({ name }) {
-//     return <li className="checked_item"> {name} ✔ </li>;
-// }
+function PackedItem({ name }) {
+    return <li className="checked_item"> {name} ✔ </li>;
+}
 
-// function UnpackedItem({ name }) {
-//     return <li className="li_item">{name}</li>;
-// }
-
-// return isPacked ? (<PackedItem name={name} />) : (<UnpackedItem name={name} />);
+function UnpackedItem({ name }) {
+    return <li className="li_item">{name}</li>;
+}
 
 function Item({ isPacked = false, name }) {
-    let item_content = name;
-
-    if (isPacked) {
-        item_content = (
-            <del className="checked_item">
-                {name + ' ✔'}
-            </del>
-        );
-    }
-    return (
-        <li className="li_item">
-            {item_content}
-        </li>
-    );
+    return isPacked ? (<PackedItem name={name} />) : (<UnpackedItem name={name} />);
 }
 
 function PackingList() {
@@ -45,11 +30,7 @@ function PackingList() {
                 />
                 <Item
                     isPacked={false}
-                    name="Asus Laptop"
-                />
-                <Item
-                    isPacked={false}
-                    name="Apply Wikipedia Internship"
+                    name="Laptop"
                 />
             </ul>
         </section>
