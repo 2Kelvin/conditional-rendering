@@ -9,7 +9,11 @@
 function Item({ isPacked = false, name }) {
     return (
         <li className="li_item">
-            {isPacked ? name + ' ✔' : name}
+            {isPacked ? (
+                <span className="checked_item">
+                    {name + ' ✔'}
+                </span>
+            ) : name}
         </li>
     );
 }
@@ -17,19 +21,24 @@ function Item({ isPacked = false, name }) {
 function PackingList() {
     return (
         <section className="packing_list">
-            <h1>Sally Ride's Packing List</h1>
+            <h1>Rocketman's Packing List</h1>
             <ul>
                 <Item
                     isPacked={true}
                     name="Space suit"
                 />
+
+                <Item
+                    isPacked={false}
+                    name="Headphones"
+                />
                 <Item
                     isPacked={true}
-                    name="Helmet with a golden leaf"
+                    name="Airbrushed helmet"
                 />
                 <Item
                     isPacked={false}
-                    name="Photo of Tam"
+                    name="Asus Laptop"
                 />
             </ul>
         </section>

@@ -14,7 +14,11 @@ function Item(_ref) {
     return React.createElement(
         "li",
         { className: "li_item" },
-        isPacked ? name + ' ✔' : name
+        isPacked ? React.createElement(
+            "span",
+            { className: "checked_item" },
+            name + ' ✔'
+        ) : name
     );
 }
 
@@ -25,7 +29,7 @@ function PackingList() {
         React.createElement(
             "h1",
             null,
-            "Sally Ride's Packing List"
+            "Rocketman's Packing List"
         ),
         React.createElement(
             "ul",
@@ -35,12 +39,16 @@ function PackingList() {
                 name: "Space suit"
             }),
             React.createElement(Item, {
+                isPacked: false,
+                name: "Headphones"
+            }),
+            React.createElement(Item, {
                 isPacked: true,
-                name: "Helmet with a golden leaf"
+                name: "Airbrushed helmet"
             }),
             React.createElement(Item, {
                 isPacked: false,
-                name: "Photo of Tam"
+                name: "Asus Laptop"
             })
         )
     );
