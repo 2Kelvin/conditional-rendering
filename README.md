@@ -6,3 +6,4 @@ In thi read, I learnt to:
 - where and how to put the conditional rendering logic
 - use the `ternary operator` in conditional rendering
 - adding & nesting JSX in ternary statements
+- use the `&&` operator
